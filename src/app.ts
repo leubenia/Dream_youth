@@ -20,9 +20,9 @@ app.use(morgan("common"));
 
 app.use("", isRouter);
 
-// app.route("/_ah/health").get((req:Request, res:Response)=>{
-//     res.sendStatus(200)
-// })
+app.route("/_ah/health").get((req:Request, res:Response)=>{
+    res.sendStatus(200)
+})
 app.use((req:Request, res:Response, next:NextFunction)=>{
     const error =  new Error(`${req.method} ${req.url} 라우터 없음..!`);
     next(error)
