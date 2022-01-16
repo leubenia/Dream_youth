@@ -5,7 +5,7 @@ const test1 = async ( req:Request, res: Response) => {
 }
 
 const test2 = async (req:Request, res: Response) => {
-    return res.status(200).send({test2:"OK"})
+    return res.status(200).send({test:"OK"})
 }
 
 const istest = {test1, test2}

@@ -6,14 +6,14 @@ import cookieParser from "cookie-parser"
 import morgan from "morgan";
 import isRouter from "./router";
 const app = express();
-app.use(express.json())
+
 app.use((req:Request, res:Response, next:NextFunction) => {
     res.header("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     next();
 });
-   
+app.use(express.json())
 app.use(cookieParser(process.env.SECRET_KEY));
 
 app.use(morgan("common"));

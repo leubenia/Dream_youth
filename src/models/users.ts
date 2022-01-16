@@ -9,12 +9,10 @@ interface UsersAttributes{
 }
 
 export class Users extends Model<UsersAttributes>{
-  public readonly index!: number;
-  public userName!: string;
-  public userDesc!: string;
-  public hasCat!:boolean;
-  public static associations: {
-  };
+  declare readonly index: number;
+  declare userName: string;
+  declare userDesc: string;
+  declare hasCat:boolean;
 }
 Users.init(
   {
