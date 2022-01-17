@@ -20,3 +20,18 @@ Postman으로 local test완료
 
 docker 설정 해야됨
 docker 이용 서버 배포 테스트 예정
+
+
+
+## 1.18 도커 확인
+```
+docker build -t dream:0.1 .
+```
+빌드
+
+```
+docker run --name test -d -p 80:3000 mytest:0.1
+```
+실행 하시면 됩니다.
+현재 DB는 RDS를 사용중
+
