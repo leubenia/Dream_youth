@@ -4,7 +4,7 @@
 ```
 npm i
 
-npm start
+npm run dev
 ```
 # DB
 현재 DB는 AWS RDS를 사용..
@@ -110,6 +110,11 @@ curl -d "{}" -H "Content-Type: application/json" -E POST http://localhost/user/4
 ```
 {"유저":"dodo","index":"4","고양이":"고양이대리고있어!로 수정!"}
 
+
+
+cUrl local 윈도우 환경 테스트 완료 
+
+AWS 확인 해야됨.
 
 
 
