@@ -1,10 +1,24 @@
 # Dream_youth
 
 현재 테스트 방법
+코드를 git clone받아서 직접 테스트하기
+src/config/config.ts
+변경해야됩니다.
+.env파일 없음
 ```
 npm i
 
 npm run dev
+```
+
+도커 허브에 올려놨습니다.
+도커에서 pull 땡겨주시고 이미지 실행하시면됩니다.
+https://hub.docker.com/repository/docker/hprinces2/dream
+docker가 깔려있다는 가정하에 
+두줄 복사해서 붙여넣으시면 실행완료
+```
+docker pull hprinces2/dream:latest
+docker run --name test -d -p 80:3000 hprinces2/dream:latest
 ```
 # DB
 현재 DB는 AWS RDS를 사용..
@@ -24,13 +38,26 @@ docker 이용 서버 배포 테스트 예정
 
 
 ## 1.18 도커 확인
-```
-docker build -t dream:0.1 .
-```
 빌드
-
 ```
-docker run --name test -d -p 80:3000 mytest:0.1
+docker build -t hprinces2/dream:latest .
+```
+
+도커 허브 push
+```
+docker push hprinces2/dream:latest
+```
+
+도커 허브 pull
+혹시 몰라서 도커 허브에도 올렸습니다.
+https://hub.docker.com/repository/docker/hprinces2/dream
+```
+docker pull hprinces2/dream:latest
+```
+
+실행!! 포트포워딩해서 사용.
+```
+docker run --name test -d -p 80:3000 hprinces2/dream:latest
 ```
 실행 하시면 됩니다.
 현재 DB는 RDS를 사용중
